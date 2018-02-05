@@ -18,8 +18,8 @@
         %li
           = link_to '削除', "/prototypes/#{@prototype.id}", method: :delete
 
-        %li
-          %a{href: "/edit", class: "btn btn-default"} 編集
+          = link_to '編集', "/edit", method: :patch
+
 
   .row
     .col-md-9.image-box
