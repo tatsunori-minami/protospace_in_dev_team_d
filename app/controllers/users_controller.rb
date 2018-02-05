@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def edit
     @prototype = Prototype.find(params[:id])
+
   end
 
   def update
