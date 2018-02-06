@@ -1,14 +1,44 @@
-  <div class=""contents row"">
-    <%= form_tag(""/prototypes/#{@prototype.id}"", method: :patch ) do %>
-      <h3>
-        編集する
-      </h3>
-      <input placeholder=""Title"" type
-      <input placeholder=""Image Url"" type=""text"" name=""image"" value=""<%= @prototype.image %>"" autofocus=""true"">
-      <textarea cols=""30"" name=""text"" placeholder=""text"" rows=""10""><%= @prototype.text %></textarea>
-      <input placeholder=""
+.contents.row
+  = form_for("/prototypes/#{@prototype.id}", method: :patch ) do
+
+    %h3
+    .col-md-1
+      編集する
+
+    %ul
+    %li<
+    %h4
+    .col-md-1
+      Tilte
+    %textarea{:cols => "30", :name => "Title", :placeholder => "string", :rows => "1"}= @prototype.title
+
+    %li<
+    %h4
+    .col-md-1
+    Main Thumbnail
+    %img{:name => "Content", :type => "string", :placeholder => "Main Thumbnail"}-#= @captured_images.content
 
 
-      <input type=""submit"" value=""SENT"">
-    <% end %>
-  </div>
+    -#%input{:autofocus => "true", :name => "image", :placeholder => "Image Url", :type => "text", :value => "#{@tcaptured_images.content}"}/
+
+
+
+
+    %li<
+    %h4
+    .col-md-1
+      Catch Copy
+    %textarea{:cols => "30", :name => "Catch Copy", :placeholder => "string", :rows => "1"}= @prototype.catch_copy
+
+    %li<
+    %h4
+    .col-md-1
+      Concept
+    %textarea{:cols => "30", :name => "Concept", :placeholder => "text", :rows => "1"}= @prototype.concept
+
+    %li<
+    .col-md-1
+    %input{:type => "submit", :value => "SENT"}/
+
+
+-#        captured_images_attributes: [:content, :status]
